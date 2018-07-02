@@ -1,0 +1,197 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Thememefest</title>
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.0/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/countdown/jquery.countdown.css" />
+    <input style="display:none" name="datesvalue" value="<%=dates%>" id="dates"/>
+    <script>
+        var unavailableDates=[];
+        $(function(){
+            var dates=document.getElementById('dates').value;
+            var datesSplit=dates.split(',');
+            for(var i=0;i<datesSplit.length;i++){
+                unavailableDates.push(datesSplit[i]);
+            }
+            console.log("Unavailable dates : ")
+            for(var j=0;j<unavailableDates.length;j++)
+            {
+               console.log(unavailableDates[j]);
+            }
+          })
+        function unavailable(date){
+            var dmy=date.getDate() +"-"+ (date.getMonth() + 1) +"-"+ date.getFullYear();
+            if($.inArray(dmy,unavailableDates) === -1){
+                    return [true, ""];
+                }else{
+                    return [false, "", "Unavailable"];
+                }
+         }
+        $(document).ready(function () {
+            $(function () {
+                $("#datepicker").datepicker({
+                    dateFormat:'d-m-yy',
+                    changeMonth: true,
+                    changeYear: true,
+                    minDate:0,
+                    beforeShowDay:unavailable
+                });
+            });
+        });
+        window.addEventListener('load',e=>{
+            if(sessionStorage.location){
+               return document.querySelector('#location').value=sessionStorage.location
+            }
+            sessionStorage.setItem('location');
+        })
+         </script>
+</head>
+<body>
+<div class="container landing-page">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-sm-12 col-xs-12">
+            <form method="POST",action='/date' class="dateForm" id="dateForm">
+            <div class="col-xl-4 offset-8 textbx">
+                <div class="form-group ">
+                    <label>Select location</label>
+                    <select name="location" id="location" class="location" onchange>
+                        <option value="" id="select">Select</option>
+                        <option value = "Bargo">Bargo</option>
+                        <option value = "East Hills">East Hills</option>
+                        <option value = "Lugarno">Lugarno</option>
+                        <option value = "Wolli Creek">Wolli Creek</option>
+                    </select>
+                    <br/><br/>
+                    <label for="comment">Check  date for appointment : </label>
+                    <input type="text" fclass="form-control" rows="5" id="datepicker" name="appointment_date"/>
+                    <br/><br/>
+                    <label>Select Services</label>
+                    <select name="services" >
+                        <option value="">Select</option>
+                        <option value="Dental Implant">Dental Implant</option>
+                        <option value="Emergency Services">Emergency Services</option>
+                        <option value="Orthodontic Clear Aligners">Orthodontic Clear Aligners</option>
+                        <option value="Six Month Braces">Six Month Braces</option>
+                        <option value="Cosmetic Dental Treatment">Cosmetic Dental Treatment</option>
+                        <option value="Ceramic Veneers">Ceramic Veneers</option>
+                        <option value="Teeth Whitening">Teeth Whitening</option>
+                        <option value="Tooth Colored Fillings">Tooth Colored Fillings</option>
+                        <option value="Muscle Relaxants Botox">Muscle Relaxants Botox</option>
+                        <option value="Pain Management">Pain Management</option>
+                        <option value="Crowns & Bridges">Crowns & Bridges</option>
+                        <option value="Partial & Complete Dentures">Partial & Complete Dentures</option>
+                        <option value="Comprehensive Checkups">Comprehensive Checkups</option>
+                        <option value="Dental Hygiene Services">Dental Hygiene Services</option>
+                        <option value="Wisdom Teeth Extraction">Wisdom Teeth Extraction</option>
+                        <option value="Root Canal Treatment">Root Canal Treatment</option>
+                        <option value="Gummy Smile Correction">Gummy Smile Correction</option>
+                        <option value="Gum Surgeries">Gum Surgeries</option>
+                    </select>
+                    <input type="submit" value="submit" name="submitDate" >
+                </div>
+            </div>
+    </form>
+            <form method="POST",action="/details" class="detailsForm" >
+                <div class="col-xl-4 offset-8 textbx">
+                    <div class="form-group ">
+                        <label for="first_name">First Name : </label>
+                        <input type="text" class="form-control" rows="5" id="first_name" name="first_name"/>
+                       <br/><br/><label for="last_name">Last Name : </label>
+                        <input type="text" class="form-control" rows="5" id="last_name" name="last_name"/>
+                        <br/><br/><label for="phone_number">Phone Number : </label>
+                        <input type="text" class="form-control" rows="5" id="phone_number" name="phone_number"/>
+                        <br/><br/><label for="email_id">Email ID : </label>
+                        <input type="text" class="form-control" rows="5" id="email_id" name="email_id"/>
+                        <input type="submit" value="submit" name="submitDetails" >
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script href="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script href="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script href="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+<script src="../public/js/bootstrap.min.js"></script>
+<script src="../public/js/countdown/jquery.countdown.js"></script>
+<script src="../public/js/countdown/script.js"></script>
+</body>
+</html>
+<script>
+        $(document).ready(function(){
+            $(".detailsForm").hide();
+            $('.dateForm').on('submit',function (event) {
+            event.preventDefault();
+                $(".detailsForm").show();
+                var $container=$(this).closest('.container');
+            $.ajax({
+                url:'/date',
+                type:'POST',
+                data:$(".dateForm").serialize(),
+                success:function (data){
+                    if(data.success){
+                    $(".dateForm").replaceWith($(".detailsForm"))
+                    }else{
+                       location.reload('home.ejs');
+                      }
+                },
+                error:function (){
+                    $container.html("Their is a problem");
+                }
+            });
+        });
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        $('.detailsForm').on('submit',function (event) {
+            event.preventDefault();
+            var $container=$(this).closest('.container');
+            $.ajax({
+                url:'/details',
+                type:'POST',
+                data:$(".detailsForm").serialize(),
+                success:function (data){
+                    if(data.success){
+                        $container.html('Appointment booked');
+                    }else{
+                        $container.html('Error occurred');
+                    }
+                },
+                error:function (){
+                    $container.html("Their is a problem");
+                }
+            });
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".location").on('change',function (event) {
+            event.preventDefault();
+            $.ajax({
+                url:'/checkavailability',
+                type:'POST',
+                data:$(".location").serialize(),
+                success:function (data) {
+                    if(data.success){
+                        location.reload('home.ejs');
+                        sessionStorage.setItem('location',document.getElementById('location').value);
+                        document.querySelector('#location').addEventListener('change', e => sessionStorage.location = e.target.value)              //   updatelocation(previous_location);
+                   }else{
+
+                 }
+              }
+            })
+        })
+    })
+</script>
+

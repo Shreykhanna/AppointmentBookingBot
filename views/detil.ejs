@@ -1,0 +1,36 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Thememefest</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" href="/css/countdown/jquery.countdown.css" />
+</head>
+<body>
+<div class="container landing-page">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-sm-12 col-xs-12">
+            <form method="POST",action='/details' class="dateForm">
+                <div class="col-xl-4 offset-8 textbx">
+                    <div class="form-group ">
+                        <label for="firstname">First Name</label>
+                        <input type="text" class="form-control" rows="5" id="firstName" name="first_name"/>
+                        <label for="lastname">Last Name</label>
+                        <input type="text" class="form-control" rows="5" id="lastName" name="last_name"/>
+                        <label for="phonenumber">Phone Number</label>
+                        <input type="text" class="form-control" rows="5" id="firstName" name="phone_number"/>
+                        <input type="submit" value="submit" name="submitDetails" >
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/countdown/jquery.countdown.js"></script>
+<script src="js/countdown/script.js"></script>
