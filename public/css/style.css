@@ -1,0 +1,148 @@
+
+body {
+  background: url("../../images/landing-page-bg.png") center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+}
+
+.countDays .digit.static {
+	box-shadow:1px 1px 1px rgba(4, 4, 4, 0.35);
+	
+	background-image: linear-gradient(bottom, #0c86b8 50%, #1e94c4 50%);
+	background-image: -o-linear-gradient(bottom, #0c86b8 50%, #1e94c4 50%);
+	background-image: -moz-linear-gradient(bottom, #0c86b8 50%, #1e94c4 50%);
+	background-image: -webkit-linear-gradient(bottom, #0c86b8 50%, #1e94c4 50%);
+	background-image: -ms-linear-gradient(bottom, #0c86b8 50%, #1e94c4 50%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, #0c86b8),
+		color-stop(0.5, #1e94c4)
+	);
+}
+.countHours .digit.static {
+	box-shadow:1px 1px 1px rgba(4, 4, 4, 0.35);
+	
+	background-image: linear-gradient(bottom, #444242 50%, #4f4f4f 50%);
+	background-image: -o-linear-gradient(bottom, #444242 50%, #4f4f4f 50%);
+	background-image: -moz-linear-gradient(bottom, #444242 50%, #4f4f4f 50%);
+	background-image: -webkit-linear-gradient(bottom, #444242 50%, #4f4f4f 50%);
+	background-image: -ms-linear-gradient(bottom, #444242 50%, #4f4f4f 50%);
+	
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, #444242),
+		color-stop(0.5, #4f4f4f)
+	);
+}
+
+.countMinutes .digit.static {
+	box-shadow:1px 1px 1px rgba(4, 4, 4, 0.35);
+	
+	background-image: linear-gradient(bottom, #e63b2d 50%, #ee5043 50%);
+	background-image: -o-linear-gradient(bottom, #e63b2d 50%, #ee5043 50%);
+	background-image: -moz-linear-gradient(bottom, #e63b2d 50%, #ee5043 50%);
+	background-image: -webkit-linear-gradient(bottom, #e63b2d 50%, #ee5043 50%);
+	background-image: -ms-linear-gradient(bottom, #e63b2d 50%, #ee5043 50%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, #e63b2d),
+		color-stop(0.5, #ee5043)
+	);
+}
+
+.countSeconds .digit.static {
+	box-shadow:1px 1px 1px rgba(4, 4, 4, 0.35);
+	
+	background-image: linear-gradient(bottom, #8fc53a 50%, #a4d05f 50%);
+	background-image: -o-linear-gradient(bottom, #8fc53a 50%, #a4d05f 50%);
+	background-image: -moz-linear-gradient(bottom, #8fc53a 50%, #a4d05f 50%);
+	background-image: -webkit-linear-gradient(bottom, #8fc53a 50%, #a4d05f 50%);
+	background-image: -ms-linear-gradient(bottom, #8fc53a 50%, #a4d05f 50%);
+	background-image: -webkit-gradient(
+		linear,
+		left bottom,
+		left top,
+		color-stop(0.5, #8fc53a),
+		color-stop(0.5, #a4d05f)
+	);
+}
+
+@font-face {
+  font-family: 'tt0003c_';
+  src: url('../fonts/tt0003c_.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/tt0003c_.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/tt0003c_.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/tt0003c_.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../../fonts/tt0003c_.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/tt0003c_.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+/*.digit {font-family: 'tt0003c_'; }*/
+.contact {  width: max-content; padding: 10px 30px; }
+.contact p {text-align: center; color:#fff;margin-bottom: 0rem;}
+
+@media screen and (min-width: 1501px) and (max-width: 1920px) {
+    .logo, #countdown{padding-top: 30px;}
+    .contact  {margin-top: 30px;}
+    .coming-soon { top: 0px !important;}
+}
+@media screen and (min-width: 1370px) and (max-width: 1500px) {
+    .logo, #countdown{padding-top: 20px;}
+    .contact  {margin-top: 30px;}
+    .coming-soon  {height: 250px;}
+    
+}
+@media screen and (min-width: 1281px) and (max-width: 1369px) {
+
+    .coming-soon  {height: 250px;}
+}
+@media screen and (min-width: 700px) and (max-width: 768px) {
+    .logo, #countdown{padding-top: 20px;}
+    .contact  {margin-top: 30px;}
+body {
+  background: url("../images/landing-page-bg-m.png") center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+}
+}
+@media screen and (min-width: 481px) and (max-width: 699px) {
+    .logo{height: 115px;}
+    .coming-soon  {height: 200px;}
+}
+@media screen and (min-width: 300px) and (max-width: 480px) {
+    .logo, #countdown{padding-top: 20px;}
+    .contact  {margin-top: 30px;} 
+    .coming-soon  {height: 200px;}
+body {
+  background: url("../images/landing-page-bg-m.png") center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; 
+  height: 100vh;
+}
+.logo{height: 170px;}
+.countdownHolder{
+    width: 340px !important;
+	font: 30px/1.5 'Open Sans Condensed',sans-serif !important;
+    }}
+.contact {margin-top: 50px;}
+.contact h1{ color:#fff;font-family: 'tt0003c_';}
+.coming-soon {position: relative; top: -50px;}
+.textbx {position: absolute; right: 0; }
